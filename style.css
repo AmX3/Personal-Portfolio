@@ -158,7 +158,7 @@ nav > ul > li > a:hover {
     }
 }
 
-.textbox {
+.text-box {
     margin-top: 200px; /*Positions the textbox in the middle */
     align-items: center;
 }
@@ -303,7 +303,7 @@ img {
     letter-spacing: 0.2em;
 }
 
-.smallicon {
+.small-icon {
     padding-bottom: 20px;
 }
 
