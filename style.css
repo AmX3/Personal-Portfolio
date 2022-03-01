@@ -1,0 +1,448 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* making the website into each box*/
+    line-height: 1.5;
+}
+
+img {
+    /*resizing images to fit page*/
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+html {
+    scroll-padding-top: 5em; /*this allows the page to occur under the header instead of behind it when using the navigation bar*/
+    scroll-behavior: smooth;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    min-height: 100vh;
+}
+
+/*Navigation Bar*/
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: transparent;
+    position: fixed;
+    transition: all 0.5s;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /*#373630*/
+}
+
+nav > .logo {
+    font-family: Sackers Gothic Medium, Verdana, Helvetica, sans-serif;
+    font-weight: bold;
+    font-size: 2em;
+    padding: 0.5em 2em;
+    text-decoration: none;
+    color: white;
+}
+
+nav ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+nav ul li a {
+    font-family: Sackers Gothic Medium, Verdana, Helvetica, sans-serif;
+    font-size: 16px;
+    color: white;
+    padding: 1em 3.5em;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.7;
+}
+
+nav > ul > li > a:hover {
+    color: white;
+    opacity: 1;
+    text-shadow: 0px 0px 5px #ffffff;
+}
+
+/*ADDING JAVASCRIPT -> HEADER CHANGE*/
+.change-color {
+    background: white;
+    position: fixed;
+    width: 100%; /*header fills up space*/
+    z-index: 1000; /*slider image appear behind*/
+    transition: all 0.5s ease-in;
+    box-shadow: 0.5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.change-color ul li a {
+    color: black;
+}
+
+.change-color ul li a:hover {
+    color: black;
+    opacity: 1;
+}
+
+.change-color .logo {
+    color: black;
+}
+
+.change-color .toggle {
+    filter: invert(1);
+}
+
+/*Home*/
+.banner {
+    position: relative;
+    background: black;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+    display: grid;
+    place-content: center;
+    text-align: center;
+}
+
+.banner h1 {
+    font-weight: 100;
+    font-size: 85px;
+    font-family: "Montserrat", monospace;
+    position: relative;
+    letter-spacing: 1rem;
+    width: max-content;
+}
+
+.banner h1::before,
+.banner h1::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/*ease forwards means that once the animation is run, it does not repeat itself*/
+.banner h1::before {
+    background-color: black;
+    animation: typewriter 4s steps(12) forwards;
+}
+
+.banner h1::after {
+    width: 3px;
+    background: white;
+    animation: typewriter 4s steps(12) forwards,
+        blink 650ms steps(12) infinite alternate;
+}
+
+@keyframes typewriter {
+    to {
+        left: 100%;
+    }
+}
+@keyframes blink {
+    to {
+        background: transparent;
+    }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.textbox {
+    margin-top: 200px; /*Positions the textbox in the middle */
+    align-items: center;
+}
+
+.subtitle {
+    font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
+    font-size: 40px;
+    text-align: center;
+    letter-spacing: 0.02em;
+    font-weight: 300;
+    line-height: 70px;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 2s ease 4s forwards;
+}
+
+.button {
+    bottom: 150px;
+    left: 45%;
+    padding: 10px 20px;
+    font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
+    background: royalblue;
+    text-decoration: none;
+    text-transform: uppercase;
+    border-radius: 50px;
+    letter-spacing: 0.02em;
+    line-height: 26px;
+    color: white;
+    font-weight: 300;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 2s ease 5s forwards;
+    position: absolute;
+}
+
+.button:hover {
+    text-shadow: 0px 0px 5px #ffffff;
+}
+
+/*About Section*/
+.about {
+    background: white;
+    color: black;
+    padding: 105px 250px;
+}
+
+h2 {
+    text-align: center;
+    letter-spacing: 0.02em;
+    font-size: 45px;
+    margin-bottom: 20px;
+    line-height: 36px;
+}
+
+hr {
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    border: 0;
+    height: 1.5px;
+    background-image: -webkit-linear-gradient(left, #f0f0f0, #e6d3b0, #f0f0f0);
+    margin-bottom: 60px;
+}
+
+.text-content-on-left {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 5em;
+}
+
+.text-content-on-left p {
+    font-size: 16px;
+    font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 26px;
+}
+
+img {
+    margin-top: 50px;
+}
+
+/*Projects*/
+.project-black-background {
+    background: black;
+    color: white;
+    padding: 100px 150px;
+}
+
+.project-black-background .grid-template {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    justify-content: center;
+}
+
+.project-black-background .block {
+    background: #222;
+    margin: 20px;
+    padding: 40px 20px;
+    color: #ffffff;
+    transition: 200ms ease-in-out;
+    max-width: 340px; /*keeping the size of the boxes*/
+    text-align: center;
+}
+
+.text {
+    height: 190px;
+    width: 280px;
+}
+
+.text h3 {
+    font-size: 32px;
+    margin-bottom: 0.5em;
+    line-height: 36px;
+    letter-spacing: 0.02em;
+}
+
+.text p {
+    font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
+    font-weight: 200;
+    font-size: 16px;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 26px;
+}
+
+.website-link {
+    background-color: #272727;
+    color: white;
+    text-transform: uppercase;
+    padding: 1em 1em;
+    border: none;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: all 0.25s;
+}
+
+.website-link:hover {
+    cursor: pointer;
+    background-color: royalblue;
+    color: white;
+    letter-spacing: 0.2em;
+}
+
+.smallicon {
+    padding-bottom: 20px;
+}
+
+/*FOOTER*/
+footer {
+    text-align: center;
+    padding: 33px;
+    background: white;
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.social-media ul {
+    list-style-type: none;
+}
+
+.social-media ul li {
+    display: inline-block;
+    list-style-type: none;
+}
+
+.social-media ul li a {
+    opacity: 0.8;
+    font-size: 45px;
+    margin-right: 15px;
+    margin-left: 15px;
+}
+
+.social-media ul li a:hover {
+    opacity: 1;
+}
+
+footer p {
+    font-size: 16px;
+    font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    line-height: 26px;
+}
+
+/*ATTEMPT WHEN RESIZING WINDOW and this helps target certain elements*/
+@media (max-width: 1080px) {
+    /*creating a header + toggle*/
+    nav > .change-color {
+        z-index: 1000;
+    }
+
+    .about {
+        padding: 50px 50px;
+    }
+
+    .text-content-on-left {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    img {
+        margin-top: 0px;
+    }
+
+    .banner h1 {
+        text-align: center;
+    }
+
+    .banner > .button {
+        bottom: 130px;
+    }
+
+    .menu {
+        top: 80px; /*hiding our navbar from view*/
+        left: -100%;
+        position: fixed;
+        display: block;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.5s;
+        background: #ffffff;
+        z-index: 999;
+        color: #111;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .menu li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu a {
+        color: black;
+        font-size: 30px;
+    }
+
+    .menu a:hover {
+        color: black;
+        text-decoration: underline 2px;
+        text-underline-position: under;
+    }
+
+    .toggle {
+        width: 40px;
+        height: 37px;
+        margin: 10px;
+        background: url(Images/menu.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        cursor: pointer;
+        float: right;
+        margin-right: 50px;
+    }
+
+    .toggle.active {
+        background: url(Images/close.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        cursor: pointer;
+    }
+
+    img {
+        align-self: center;
+    }
+
+    .banner .button {
+        bottom: 80px;
+    }
+
+    .project-black-background .grid-template {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+}

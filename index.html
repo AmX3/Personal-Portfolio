@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Personal Portfolio | Responsive Website Design</title>
+        <link href="style.css" rel="stylesheet" text="text/css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            rel="stylesheet"
+        />
+        <link
+            src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+            rel="stylesheet"
+        />
+    </head>
+
+    <body>
+        <header>
+            <nav>
+                <a class="logo" href="#">AD</a>
+                <ul class="menu">
+                    <li>
+                        <a href="#" onclick="toggleMenu()" ;>Home</a>
+                    </li>
+                    <li>
+                        <a href="#about" onclick="toggleMenu()" ;>About</a>
+                    </li>
+                    <li>
+                        <a href="#projects" onclick="toggleMenu()" ;
+                            >Projects</a
+                        >
+                    </li>
+                    <li>
+                        <a href="#contact" onclick="toggleMenu()" ;>Contact</a>
+                    </li>
+                </ul>
+                <div class="toggle" onclick="toggleMenu()" ;></div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="banner">
+                <div class="textbox">
+                    <h1>Amelia Deng.</h1>
+                    <p class="subtitle">Aspiring Web Developer</p>
+                    <a href="#about" class="button">About Me</a>
+                </div>
+            </section>
+
+            <section class="about" id="about">
+                <h2>About Me</h2>
+                <hr />
+                <div class="text-content-on-left">
+                    <p>
+                        Bachelor of Science graduate with a growing interest in
+                        the technology industry and web development.
+                        <br />
+                        <br />
+                        During my undergraduate studies, I had the opportunity
+                        to take an Introduction to Coding elective, in which I
+                        learned how to make a game, as well as core units in
+                        which I learned how to use R to create data
+                        visualisations.
+                        <br />
+                        Enrolling in a three-week SheCodes Basic Workshop also
+                        provided insight into front-end development and
+                        development tools. As a requirement of the workshop, I
+                        was able to create a website of great interest to me,
+                        and I enjoyed the creative aspects involved as well as
+                        finding solutions to fixing my code. Overall, I
+                        appreciate development's learning process, technical
+                        knowledge, and creativity.
+                        <br />
+                        <br />
+                        Currently, I am planning to complete a 12-week Software
+                        Development Bootcamp by nology.
+                    </p>
+                    <img
+                        src="Images/photo.jpeg"
+                        alt="photo"
+                        style="float: right; width: 300px; height: 300px"
+                    />
+                </div>
+            </section>
+
+            <section class="project-black-background" id="projects">
+                <h2>Projects</h2>
+                <hr />
+                <div class="grid-template">
+                    <div class="block">
+                        <div class="smallicon">
+                            <i class="fas fa-utensils fa-5x"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Exploring Sydney</h3>
+                            <p>
+                                One of the first personal project I have worked
+                                on. This website is a compilation of vegetarian
+                                restaurants recommendations in Sydney.
+                            </p>
+                        </div>
+                        <a
+                            href="https://exploringsydney.netlify.app"
+                            target="blank"
+                            class="website-link"
+                        >
+                            Visit Site</a
+                        >
+                    </div>
+                    <div class="block">
+                        <div class="smallicon">
+                            <i class="fas fa-calendar-day fa-5x"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Calendar</h3>
+                            <p>
+                                Features of the calendar are inspired by the
+                                frosty glass effect. Watercolor background was
+                                designed in Adobe Illustrator.
+                            </p>
+                        </div>
+                        <a
+                            href="https://calendar-days.netlify.app"
+                            target="blank"
+                            class="website-link"
+                        >
+                            Visit Site</a
+                        >
+                    </div>
+                    <div class="block">
+                        <div class="smallicon">
+                            <i class="fas fa-clock fa-5x"></i>
+                        </div>
+                        <div class="text">
+                            <h3>Digital Clock</h3>
+                            <p>
+                                Features include greeting, time, date and two
+                                alternating themes.
+                            </p>
+                        </div>
+                        <a
+                            href="https://digitalalarm.netlify.app"
+                            target="blank"
+                            class="website-link"
+                        >
+                            Visit Site</a
+                        >
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="black-background" id="contact">
+            <h2>Get in Touch</h2>
+            <hr />
+            <div class="social-media">
+                <ul>
+                    <li>
+                        <a
+                            style="color: black"
+                            href="mailto:ameliadeng37@gmail.com"
+                        >
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            style="color: black"
+                            href="https://github.com/AmX3"
+                            title="Github"
+                            target="blank"
+                        >
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li>
+                        <a
+                            style="color: black"
+                            href="https://www.linkedin.com/in/amelia-deng/"
+                            title="LinkedIn"
+                            target="blank"
+                        >
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <p>
+                <span>Made by <strong>Amelia Deng</strong> | </span>
+                <span id="currentYear"> </span>
+            </p>
+        </footer>
+
+        <script type="text/javascript" src="script.js"></script>
+    </body>
+</html>
