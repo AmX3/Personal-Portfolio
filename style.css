@@ -97,28 +97,26 @@ nav > ul > li > a:hover {
 
 /*Home*/
 .banner {
-    position: relative;
     background: black;
     background-position: center;
     background-size: cover;
     min-height: 100vh;
-    color: white;
-    display: grid;
-    place-content: center;
-    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.banner h1 {
+h1 {
     font-weight: 100;
-    font-size: 85px;
+    font-size: 6em;
     font-family: "Montserrat", monospace;
-    position: relative;
     letter-spacing: 1rem;
+    position: relative; /*containing block for our pseudoclass typescript*/
     width: max-content;
 }
 
-.banner h1::before,
-.banner h1::after {
+h1::before,
+h1::after {
     content: "";
     position: absolute;
     top: 0;
@@ -128,16 +126,16 @@ nav > ul > li > a:hover {
 }
 
 /*ease forwards means that once the animation is run, it does not repeat itself*/
-.banner h1::before {
+h1::before {
     background-color: black;
-    animation: typewriter 4s steps(12) forwards;
+    animation: typewriter 4s steps(11) forwards;
 }
 
-.banner h1::after {
-    width: 3px;
+h1::after {
+    width: 3px; /*how thick the line is*/
     background: white;
-    animation: typewriter 4s steps(12) forwards,
-        blink 650ms steps(12) infinite alternate;
+    animation: typewriter 4s steps(11) forwards,
+        blink 650ms steps(11) infinite alternate;
 }
 
 @keyframes typewriter {
@@ -158,26 +156,27 @@ nav > ul > li > a:hover {
     }
 }
 
-.text-box {
-    margin-top: 200px; /*Positions the textbox in the middle */
+.text-box-container {
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
     align-items: center;
+    color: white;
+    height: 300px;
+    width: 900px;
 }
 
 .subtitle {
     font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
     font-size: 40px;
-    text-align: center;
     letter-spacing: 0.02em;
     font-weight: 300;
-    line-height: 70px;
     opacity: 0;
     transform: translateY(3rem);
     animation: fadeInUp 2s ease 4s forwards;
 }
 
 .button {
-    bottom: 150px;
-    left: 45%;
     padding: 10px 20px;
     font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
     background: royalblue;
@@ -185,13 +184,12 @@ nav > ul > li > a:hover {
     text-transform: uppercase;
     border-radius: 50px;
     letter-spacing: 0.02em;
-    line-height: 26px;
+    margin: 20px;
     color: white;
     font-weight: 300;
     opacity: 0;
     transform: translateY(3rem);
     animation: fadeInUp 2s ease 5s forwards;
-    position: absolute;
 }
 
 .button:hover {
