@@ -1,44 +1,46 @@
 * {
-    margin: 0;
+    box-sizing: border-box; /*all is included within the box i.e margin, padding etc*/
     padding: 0;
-    box-sizing: border-box; /* making the website into each box*/
-    line-height: 1.5;
+    margin: 0;
 }
 
-img {
-    /*resizing images to fit page*/
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-}
 html {
     scroll-padding-top: 5em; /*this allows the page to occur under the header instead of behind it when using the navigation bar*/
     scroll-behavior: smooth;
-    width: 100%;
-    height: 100%;
 }
 
-body {
-    min-height: 100vh;
+.grid-wrapper {
+    display: grid;
+    grid-template-areas:
+        "hd hd hd hd hd "
+        ".  about about about ."
+        ". . tech . ."
+        "projects projects projects projects projects "
+        ". . footer . .";
+}
+
+.grid-container {
+    padding: 55px;
 }
 
 /*Navigation Bar*/
 nav {
+    font-family: Sackers Gothic Medium, Verdana, Helvetica, sans-serif;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: transparent;
     position: fixed;
     transition: all 0.5s;
     top: 0;
     left: 0;
     width: 100%;
     z-index: 1000;
+    background-color: transparent;
+    padding: 10px;
     /*#373630*/
 }
 
-nav > .logo {
-    font-family: Sackers Gothic Medium, Verdana, Helvetica, sans-serif;
+.logo {
     font-weight: bold;
     font-size: 2em;
     padding: 0.5em 2em;
@@ -52,18 +54,16 @@ nav ul li {
 }
 
 nav ul li a {
-    font-family: Sackers Gothic Medium, Verdana, Helvetica, sans-serif;
     font-size: 16px;
     color: white;
-    padding: 1em 3.5em;
+    margin: 50px;
     text-decoration: none;
     letter-spacing: 0.02em;
     transition: all 0.2s ease-in-out;
     opacity: 0.7;
 }
 
-nav > ul > li > a:hover {
-    color: white;
+nav ul li a:hover {
     opacity: 1;
     text-shadow: 0px 0px 5px #ffffff;
 }
@@ -95,28 +95,39 @@ nav > ul > li > a:hover {
     filter: invert(1);
 }
 
-/*Home*/
-.banner {
-    background: black;
-    background-position: center;
-    background-size: cover;
-    min-height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#landingPage {
+    grid-area: hd;
 }
 
-h1 {
+.landing-page {
+    background: black;
+    background-size: cover;
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.landing-page-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 300px;
+}
+
+.landing-page h1 {
     font-weight: 100;
-    font-size: 6em;
+    font-size: 8em;
     font-family: "Montserrat", monospace;
+    position: relative; /*typewriter covers h1 only and not whole cover*/
     letter-spacing: 1rem;
-    position: relative; /*containing block for our pseudoclass typescript*/
     width: max-content;
 }
 
-h1::before,
-h1::after {
+.landing-page h1::before,
+.landing-page h1::after {
     content: "";
     position: absolute;
     top: 0;
@@ -126,16 +137,16 @@ h1::after {
 }
 
 /*ease forwards means that once the animation is run, it does not repeat itself*/
-h1::before {
+.landing-page h1::before {
     background-color: black;
-    animation: typewriter 4s steps(11) forwards;
+    animation: typewriter 4s steps(12) forwards;
 }
 
-h1::after {
-    width: 3px; /*how thick the line is*/
+.landing-page h1::after {
+    width: 3px;
     background: white;
-    animation: typewriter 4s steps(11) forwards,
-        blink 650ms steps(11) infinite alternate;
+    animation: typewriter 4s steps(12) forwards,
+        blink 650ms steps(12) infinite alternate;
 }
 
 @keyframes typewriter {
@@ -156,35 +167,27 @@ h1::after {
     }
 }
 
-.text-box-container {
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    height: 300px;
-    width: 900px;
-}
-
-.subtitle {
+.landing-page-content p {
     font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
     font-size: 40px;
+    text-align: center;
     letter-spacing: 0.02em;
     font-weight: 300;
+    line-height: 70px;
     opacity: 0;
     transform: translateY(3rem);
     animation: fadeInUp 2s ease 4s forwards;
 }
 
 .button {
-    padding: 10px 20px;
     font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
+    padding: 10px 20px;
     background: royalblue;
     text-decoration: none;
     text-transform: uppercase;
     border-radius: 50px;
     letter-spacing: 0.02em;
-    margin: 20px;
+    line-height: 26px;
     color: white;
     font-weight: 300;
     opacity: 0;
@@ -196,11 +199,8 @@ h1::after {
     text-shadow: 0px 0px 5px #ffffff;
 }
 
-/*About Section*/
-.about {
-    background: white;
-    color: black;
-    padding: 105px 250px;
+#about {
+    grid-area: about;
 }
 
 h2 {
@@ -222,9 +222,10 @@ hr {
 }
 
 .text-content-on-left {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-gap: 5em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 100px;
 }
 
 .text-content-on-left p {
@@ -233,54 +234,68 @@ hr {
     font-weight: 300;
     letter-spacing: 0.02em;
     line-height: 26px;
+    margin: 10px;
+}
+
+.para-flex {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 img {
-    margin-top: 50px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
-/*Projects*/
+#techSkills {
+    grid-area: tech;
+    padding: 100px;
+}
+
+/* https://css-tricks.com/css-grid-replace-flexbox/ */
+
+#projects {
+    grid-area: projects;
+}
+
 .project-black-background {
     background: black;
     color: white;
-    padding: 100px 150px;
+    padding: 55px;
 }
 
-.project-black-background .grid-template {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
+.child {
+    display: flex;
+    justify-content: space-evenly;
 }
 
 .project-black-background .block {
     background: #222;
-    margin: 20px;
-    padding: 40px 20px;
     color: #ffffff;
     transition: 200ms ease-in-out;
-    max-width: 340px; /*keeping the size of the boxes*/
-    text-align: center;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
 }
 
-.text {
-    height: 190px;
-    width: 280px;
-}
-
-.text h3 {
-    font-size: 32px;
-    margin-bottom: 0.5em;
-    line-height: 36px;
-    letter-spacing: 0.02em;
-}
-
-.text p {
+.block p {
     font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
     font-weight: 200;
     font-size: 16px;
     font-weight: 300;
     letter-spacing: 0.02em;
     line-height: 26px;
+}
+
+.block h3 {
+    font-size: 32px;
+    margin-bottom: 0.5em;
+    line-height: 36px;
+    letter-spacing: 0.02em;
 }
 
 .website-link {
@@ -305,7 +320,10 @@ img {
     padding-bottom: 20px;
 }
 
-/*FOOTER*/
+#contact {
+    grid-area: footer;
+}
+
 footer {
     text-align: center;
     padding: 33px;
@@ -314,27 +332,15 @@ footer {
 
 .social-media {
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
+    margin-bottom: 40px;
 }
-
-.social-media ul {
-    list-style-type: none;
-}
-
-.social-media ul li {
-    display: inline-block;
-    list-style-type: none;
-}
-
-.social-media ul li a {
+.social-media a {
     opacity: 0.8;
-    font-size: 45px;
-    margin-right: 15px;
-    margin-left: 15px;
 }
 
-.social-media ul li a:hover {
+.social-media a:hover {
     opacity: 1;
 }
 
@@ -351,28 +357,6 @@ footer p {
     /*creating a header + toggle*/
     nav > .change-color {
         z-index: 1000;
-    }
-
-    .about {
-        padding: 50px 50px;
-    }
-
-    .text-content-on-left {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-    }
-
-    img {
-        margin-top: 0px;
-    }
-
-    .banner h1 {
-        text-align: center;
-    }
-
-    .banner > .button {
-        bottom: 130px;
     }
 
     .menu {
@@ -428,19 +412,5 @@ footer p {
         background-repeat: no-repeat;
         background-size: 25px;
         cursor: pointer;
-    }
-
-    img {
-        align-self: center;
-    }
-
-    .banner .button {
-        bottom: 80px;
-    }
-
-    .project-black-background .grid-template {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
     }
 }

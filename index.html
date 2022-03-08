@@ -5,7 +5,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Personal Portfolio | Responsive Website Design</title>
-        <link href="style.css" rel="stylesheet" text="text/css" />
+        <link href="style.css" rel="stylesheet" />
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
             rel="stylesheet"
@@ -17,90 +17,109 @@
     </head>
 
     <body>
-        <header>
-            <nav>
-                <a class="logo" href="#">AD</a>
-                <ul class="menu">
-                    <li>
-                        <a href="#" onclick="toggleMenu()" ;>Home</a>
-                    </li>
-                    <li>
-                        <a href="#about" onclick="toggleMenu()" ;>About</a>
-                    </li>
-                    <li>
-                        <a href="#projects" onclick="toggleMenu()" ;>
-                            Projects
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#contact" onclick="toggleMenu()" ;>Contact</a>
-                    </li>
-                </ul>
-                <div class="toggle" onclick="toggleMenu()" ;></div>
-            </nav>
-        </header>
+        <nav>
+            <a class="logo" href="#">AD</a>
+            <ul class="menu">
+                <li>
+                    <a href="#" onclick="toggleMenu()" ;>Home</a>
+                </li>
+                <li>
+                    <a href="#about" onclick="toggleMenu()" ;>About</a>
+                </li>
+                <li>
+                    <a href="#projects" onclick="toggleMenu()" ;> Projects </a>
+                </li>
+                <li>
+                    <a href="#contact" onclick="toggleMenu()" ;>Contact</a>
+                </li>
+            </ul>
+            <div class="toggle" onclick="toggleMenu()" ;></div>
+        </nav>
 
-        <main>
-            <section class="banner">
-                <div class="text-box-container">
-                    <h1>Amelia Deng</h1>
-                    <p class="subtitle">Aspiring Web Developer</p>
+        <div class="grid-wrapper">
+            <header class="landing-page grid-container" id="landingPage">
+                <div class="landing-page-content">
+                    <h1>Amelia Deng.</h1>
+                    <p>Aspiring Web Developer</p>
                     <a href="#about" class="button">About Me</a>
                 </div>
-            </section>
+            </header>
 
-            <section class="about" id="about">
+            <section class="grid-container" id="about">
                 <h2>About Me</h2>
                 <hr />
                 <div class="text-content-on-left">
-                    <p>
-                        Bachelor of Science graduate with a growing interest in
-                        the technology industry and web development.
-                        <br />
-                        <br />
-                        During my undergraduate studies, I had the opportunity
-                        to take an Introduction to Coding elective, in which I
-                        learned how to make a game, as well as core units in
-                        which I learned how to use R to create data
-                        visualisations.
-                        <br />
-                        Enrolling in a three-week SheCodes Basic Workshop also
-                        provided insight into front-end development and
-                        development tools. As a requirement of the workshop, I
-                        was able to create a website of great interest to me,
-                        and I enjoyed the creative aspects involved as well as
-                        finding solutions to fixing my code. Overall, I
-                        appreciate development's learning process, technical
-                        knowledge, and creativity.
-                        <br />
-                        <br />
-                        Currently, I am planning to complete a 12-week Software
-                        Development Bootcamp by nology.
-                    </p>
-                    <img
-                        src="Images/photo.jpeg"
-                        alt="photo"
-                        style="float: right; width: 300px; height: 300px"
-                    />
+                    <div class="para-flex">
+                        <p>
+                            Bachelor of Science graduate with a growing interest
+                            in the technology industry and web development.
+                        </p>
+                        <p>
+                            During my undergraduate studies, I had the
+                            opportunity to take an Introduction to Coding
+                            elective, in which I learned how to make a game, as
+                            well as core units in which I learned how to use R
+                            to create data visualisations.
+                        </p>
+                        <p>
+                            Enrolling in a three-week SheCodes Basic Workshop
+                            also provided insight into front-end development and
+                            development tools. As a requirement of the workshop,
+                            I was able to create a website of great interest to
+                            me, and I enjoyed the creative aspects involved as
+                            well as finding solutions to fixing my code.
+                            Overall, I appreciate development's learning
+                            process, technical knowledge, and creativity.
+                        </p>
+                        <p>
+                            Currently, I am planning to complete a 12-week
+                            Software Development Bootcamp by nology.
+                        </p>
+                    </div>
+                    <div>
+                        <img src="Images/photo.jpeg" alt="photo" />
+                    </div>
                 </div>
             </section>
 
-            <section class="project-black-background" id="projects">
+            <section class="grid-container" id="techSkills">
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                </p>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                </p>
+            </section>
+
+            <section
+                class="project-black-background grid-container"
+                id="projects"
+            >
                 <h2>Projects</h2>
                 <hr />
-                <div class="grid-template">
+                <div class="child">
                     <div class="block">
-                        <div class="small-icon">
-                            <i class="fas fa-utensils fa-5x"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Exploring Sydney</h3>
-                            <p>
-                                One of the first personal project I have worked
-                                on. This website is a compilation of vegetarian
-                                restaurants recommendations in Sydney.
-                            </p>
-                        </div>
+                        <i class="fas fa-utensils fa-5x"></i>
+                        <h3>Exploring Sydney</h3>
+                        <p>
+                            This website is a compilation of vegetarian
+                            restaurants recommendations in Sydney.
+                        </p>
+
                         <a
                             href="https://exploringsydney.netlify.app"
                             target="blank"
@@ -109,18 +128,15 @@
                             Visit Site</a
                         >
                     </div>
+
                     <div class="block">
-                        <div class="small-icon">
-                            <i class="fas fa-calendar-day fa-5x"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Calendar</h3>
-                            <p>
-                                Features of the calendar are inspired by the
-                                frosty glass effect. Watercolor background was
-                                designed in Adobe Illustrator.
-                            </p>
-                        </div>
+                        <i class="fas fa-calendar-day fa-5x"></i>
+                        <h3>Calendar</h3>
+                        <p>
+                            Features of the calendar are inspired by the frosty
+                            glass effect. Watercolor background was designed in
+                            Adobe Illustrator.
+                        </p>
                         <a
                             href="https://calendar-days.netlify.app"
                             target="blank"
@@ -129,17 +145,14 @@
                             Visit Site</a
                         >
                     </div>
+
                     <div class="block">
-                        <div class="small-icon">
-                            <i class="fas fa-clock fa-5x"></i>
-                        </div>
-                        <div class="text">
-                            <h3>Digital Clock</h3>
-                            <p>
-                                Features include greeting, time, date and two
-                                alternating themes.
-                            </p>
-                        </div>
+                        <i class="fas fa-clock fa-5x"></i>
+                        <h3>Digital Clock</h3>
+                        <p>
+                            Features include greeting, time, date and two
+                            alternating themes.
+                        </p>
                         <a
                             href="https://digitalalarm.netlify.app"
                             target="blank"
@@ -150,49 +163,41 @@
                     </div>
                 </div>
             </section>
-        </main>
 
-        <footer class="black-background" id="contact">
-            <h2>Get in Touch</h2>
-            <hr />
-            <div class="social-media">
-                <ul>
-                    <li>
-                        <a
-                            style="color: black"
-                            href="mailto:ameliadeng37@gmail.com"
-                        >
-                            <i class="fas fa-envelope"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            style="color: black"
-                            href="https://github.com/AmX3"
-                            title="Github"
-                            target="blank"
-                        >
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            style="color: black"
-                            href="https://www.linkedin.com/in/amelia-deng/"
-                            title="LinkedIn"
-                            target="blank"
-                        >
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                </ul>
-            </div>
-            <p>
-                <span>Made by <strong>Amelia Deng</strong> | </span>
-                <span id="currentYear"> </span>
-            </p>
-        </footer>
-
+            <footer class="black-background grid-container" id="contact">
+                <h2>Get in Touch</h2>
+                <hr />
+                <div class="social-media">
+                    <a
+                        style="color: black"
+                        fa-5x
+                        href="mailto:ameliadeng37@gmail.com"
+                    >
+                        <i class="fas fa-envelope fa-3x"></i>
+                    </a>
+                    <a
+                        style="color: black"
+                        href="https://github.com/AmX3"
+                        title="Github"
+                        target="blank"
+                    >
+                        <i class="fab fa-github fa-3x"></i>
+                    </a>
+                    <a
+                        style="color: black"
+                        href="https://www.linkedin.com/in/amelia-deng/"
+                        title="LinkedIn"
+                        target="blank"
+                    >
+                        <i class="fab fa-linkedin-in fa-3x"></i>
+                    </a>
+                </div>
+                <p>
+                    <span>Made by <strong>Amelia Deng</strong> | </span>
+                    <span id="currentYear"> </span>
+                </p>
+            </footer>
+        </div>
         <script type="text/javascript" src="script.js"></script>
     </body>
 </html>
