@@ -1,0 +1,135 @@
+@use "./../partials/palette";
+@use "./../partials/mixins";
+
+.navbar {
+    @extend %font-navbar-family;
+    @include mixins.background-and-color(transparent, palette.$white);
+    position: fixed;
+    transition: all 0.5s;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    /*#373630*/
+
+    @include mixins.phone {
+        height: 7%;
+    }
+
+    &__container {
+        @extend %flexbox;
+    }
+
+    &__menu {
+        @extend %flexbox;
+    }
+
+    &__brand {
+        @include mixins.text-style(2em, bold, none);
+        padding: 0.5em 2em;
+        color: palette.$white;
+    }
+
+    &__list {
+        list-style-type: none;
+    }
+
+    &__links {
+        @include mixins.text-style(16px, 100, 27px, $spacing: 0.02em);
+        color: palette.$white;
+        margin: 50px;
+        transition: all 0.2s ease-in-out;
+        opacity: 0.7;
+
+        &--contact {
+            @include mixins.background-and-color(
+                palette.$secondary-color,
+                palette.$white
+            );
+            border-radius: 50px;
+            padding: 10px 20px;
+            opacity: 1;
+        }
+
+        &--hover:hover {
+            opacity: 1;
+            padding-bottom: 3px;
+            border-bottom: 3px solid palette.$secondary-color;
+            text-shadow: 0px 0px 5px palette.$white;
+        }
+    }
+}
+
+// this whole part needs refixing i.e how to incorporate classes made in javascript
+
+/*ADDING JAVASCRIPT -> HEADER CHANGE*/
+.change-color {
+    @include mixins.background-and-color(
+        palette.$white,
+        palette.$primary-color
+    );
+
+    box-shadow: 0.5px 2px rgba(0, 0, 0, 0.1);
+}
+
+.change-color a {
+    color: palette.$primary-color;
+}
+
+.change-color .toggle {
+    filter: invert(1);
+}
+
+/*ATTEMPT WHEN RESIZING WINDOW and this helps target certain elements*/
+@media (max-width: 1080px) {
+    .menu {
+        top: 120px; /*hiding our navbar from view*/
+        left: -100%;
+        position: fixed;
+        display: block;
+        width: 100%;
+        height: 100vh;
+        text-align: center;
+        transition: 0.5s;
+        background: palette.$white;
+        z-index: 999;
+        color: palette.$dark-grey;
+    }
+
+    .menu.active {
+        left: 0;
+    }
+
+    .menu li {
+        display: flex;
+        justify-content: center;
+    }
+
+    .menu a {
+        color: palette.$primary-color;
+        font-size: 30px;
+    }
+
+    .menu a:hover {
+        color: palette.$primary-color;
+    }
+
+    .toggle {
+        width: 40px;
+        height: 37px;
+        background: url(Images/menu.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 30px;
+        cursor: pointer;
+        float: right;
+    }
+
+    .toggle.active {
+        background: url(Images/close.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 25px;
+        cursor: pointer;
+    }
+}

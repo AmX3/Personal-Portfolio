@@ -1,13 +1,23 @@
-const navigation = document.querySelector("nav"); //selects our class in the header
-window.onscroll = function () {
-    var top = window.scrollY; //creating an variable
-    console.log(top); //executing our scroll
-    if (top > 75) {
-        navigation.classList.add("change-color"); //adding a new class with our change
+// const navigation = document.querySelector(".navbar"); //selects our class in the header
+// window.onscroll = function () {
+//     var top = window.scrollY; //creating an variable
+//     console.log(top); //executing our scroll
+//     if (top > 75) {
+//         navigation.classList.add("change-color");
+//     } else {
+//         navigation.classList.remove("change-color");
+//     }
+// };
+
+function scrollHeader() {
+    const nav = document.querySelector(".navbar");
+    if (this.scrollY >= 75) {
+        nav.classList.add("change-color");
     } else {
-        navigation.classList.remove("change-color");
+        nav.classList.remove("change-color");
     }
-};
+}
+window.addEventListener("scroll", scrollHeader);
 
 function toggleMenu() {
     var menuToggle = document.querySelector(".toggle");

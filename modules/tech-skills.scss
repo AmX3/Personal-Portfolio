@@ -1,0 +1,20 @@
+@use "./../partials/palette";
+@use "./../partials/mixins";
+
+#techSkills {
+    grid-area: tech;
+}
+
+.skills {
+    @include mixins.flex($just-cont: space-around);
+    @include mixins.background-and-color(
+        palette.$light-grey,
+        palette.$primary-color
+    );
+
+    @include mixins.phone {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+    }
+}
