@@ -1,0 +1,82 @@
+@use "./../partials/palette";
+@use "./../partials/mixins";
+
+#about {
+    grid-area: about;
+}
+
+.about {
+    &__heading {
+        @extend %heading;
+    }
+
+    &__fancy-line {
+        @extend %fancy-line;
+    }
+
+    &__container {
+        @extend %flexbox;
+        @include mixins.text-style(16px, 300, 27px);
+        @extend %font-body-family;
+
+        @include mixins.phone {
+            @include mixins.flex(
+                $flx-dir: column,
+                $just-cont: space-evenly,
+                $flex-wrap: wrap
+            );
+            gap: 50px;
+        }
+
+        @include mixins.tablet-portrait {
+            @include mixins.flex(
+                $flx-dir: column,
+                $just-cont: space-evenly,
+                $flex-wrap: wrap
+            );
+            gap: 50px;
+        }
+
+        @include mixins.tablet-landscape {
+            @include mixins.flex($flex-wrap: nowrap);
+            gap: 50px;
+        }
+    }
+
+    &__image-container {
+        object-fit: contain;
+        object-position: center;
+    }
+
+    &__image {
+        @include mixins.height-and-width(100%, 60%);
+
+        @include mixins.tablet-landscape {
+            @include mixins.height-and-width(100%, 100%);
+        }
+    }
+
+    &__para-box {
+        @include mixins.flex($flx-dir: column, $text-align: left);
+        max-width: max-content;
+
+        @include mixins.phone {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        @include mixins.tablet-portrait {
+            max-width: 100%;
+            text-align: center;
+        }
+
+        @include mixins.tablet-landscape {
+            max-width: 100%;
+            text-align: center;
+        }
+    }
+
+    &__paragraph {
+        margin-bottom: 27px;
+    }
+}

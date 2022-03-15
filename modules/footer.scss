@@ -1,0 +1,38 @@
+@use "./../partials/palette";
+@use "./../partials/mixins";
+
+#contact {
+    grid-area: footer;
+}
+
+.footer {
+    background: palette.$white;
+
+    &__heading {
+        @extend %heading;
+    }
+
+    &__fancy-line {
+        @extend %fancy-line;
+    }
+
+    &__social-media {
+        @include mixins.flex($just-cont: space-evenly);
+        margin-bottom: 40px;
+    }
+
+    &__links {
+        color: palette.$primary-color;
+        opacity: 0.8;
+    }
+
+    &__links:hover {
+        opacity: 1;
+    }
+
+    &__paragraph {
+        @include mixins.text-style(16px, 300, 26px);
+        @extend %font-body-family;
+        text-align: center;
+    }
+}

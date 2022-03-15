@@ -7,61 +7,103 @@
         <title>Personal Portfolio | Responsive Website Design</title>
         <link href="style.css" rel="stylesheet" />
         <link
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
             rel="stylesheet"
         />
         <link
-            src="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
+            href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
             rel="stylesheet"
         />
     </head>
 
     <body>
-        <nav>
-            <a class="logo" href="#">AD</a>
-            <ul class="menu">
-                <li>
-                    <a href="#" onclick="toggleMenu()" ;>Home</a>
-                </li>
-                <li>
-                    <a href="#about" onclick="toggleMenu()" ;>About</a>
-                </li>
-                <li>
-                    <a href="#projects" onclick="toggleMenu()" ;> Projects </a>
-                </li>
-                <li>
-                    <a href="#contact" onclick="toggleMenu()" ;>Contact</a>
-                </li>
-            </ul>
-            <div class="toggle" onclick="toggleMenu()" ;></div>
+        <nav class="navbar">
+            <div class="navbar__container">
+                <a class="navbar__brand" href="#">AD</a>
+                <ul class="navbar__menu menu">
+                    <li class="navbar__list">
+                        <a
+                            href="#"
+                            onclick="toggleMenu()"
+                            ;
+                            class="navbar__links navbar__links--hover"
+                            >Home</a
+                        >
+                    </li>
+                    <li class="navbar__list">
+                        <a
+                            href="#about"
+                            onclick="toggleMenu()"
+                            class="navbar__links navbar__links--hover"
+                            ;
+                            >About</a
+                        >
+                    </li>
+                    <li class="navbar__list">
+                        <a
+                            href="#projects"
+                            onclick="toggleMenu()"
+                            class="navbar__links navbar__links--hover"
+                            ;
+                        >
+                            Projects
+                        </a>
+                    </li>
+                    <li class="navbar__list">
+                        <a
+                            href="#contact"
+                            onclick="toggleMenu()"
+                            class="navbar__links navbar__links--contact"
+                            ;
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar__toggle" onclick="toggleMenu()" ;></div>
         </nav>
 
         <div class="grid-wrapper">
             <header class="landing-page grid-container" id="landingPage">
-                <div class="landing-page-content">
-                    <h1>Amelia Deng.</h1>
-                    <p>Aspiring Web Developer</p>
-                    <a href="#about" class="button">About Me</a>
+                <div class="landing-page__content">
+                    <h1
+                        class="landing-page__heading landing-page__heading--animation"
+                    >
+                        Amelia Deng.
+                    </h1>
+                    <p class="landing-page__para">Aspiring Web Developer</p>
+                    <a
+                        href="#about"
+                        class="landing-page__button landing-page__button--hover"
+                        >About Me</a
+                    >
                 </div>
             </header>
 
-            <section class="grid-container" id="about">
-                <h2>About Me</h2>
-                <hr />
-                <div class="text-content-on-left">
-                    <div class="para-flex">
-                        <p>
+            <section class="about grid-container" id="about">
+                <h2 class="about__heading">About Me</h2>
+                <hr class="about__fancy-line" />
+                <div class="about__container">
+                    <div class="about__image-container">
+                        <img
+                            class="about__image"
+                            src="Images/photo.jpeg"
+                            alt="photo"
+                        />
+                    </div>
+                    <div class="about__para-box">
+                        <p class="about__paragraph">
                             Bachelor of Science graduate with a growing interest
                             in the technology industry and web development.
                         </p>
-                        <p>
+                        <p class="about__paragraph">
                             During my undergraduate studies, I had the
                             opportunity to take an Introduction to Coding
                             elective, in which I learned how to make a game, as
                             well as core units in which I learned how to use R
                             to create data visualisations.
                         </p>
-                        <p>
+                        <p class="about__paragraph">
                             Enrolling in a three-week SheCodes Basic Workshop
                             also provided insight into front-end development and
                             development tools. As a requirement of the workshop,
@@ -70,113 +112,165 @@
                             well as finding solutions to fixing my code.
                             Overall, I appreciate development's learning
                             process, technical knowledge, and creativity.
+                            Currently, I am completing a 12-week Software
+                            Development Bootcamp by nology.
                         </p>
-                        <p>
-                            Currently, I am planning to complete a 12-week
-                            Software Development Bootcamp by nology.
-                        </p>
-                    </div>
-                    <div>
-                        <img src="Images/photo.jpeg" alt="photo" />
                     </div>
                 </div>
             </section>
 
-            <section class="grid-container" id="techSkills">
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                </p>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                    do eiusmod tempor incididunt ut labore et dolore magna
-                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    Duis aute irure dolor in reprehenderit in voluptate velit
-                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
-                    occaecat cupidatat non proident, sunt in culpa qui officia
-                    deserunt mollit anim id est laborum.
-                </p>
+            <section class="skills grid-container" id="techSkills">
+                <div class="skills__icon-container">
+                    <i class="fa fa-html5 fa-3x"></i>
+                    <p>HTML5</p>
+                </div>
+                <div class="skills__icon-container">
+                    <i class="fa-brands fa-css3-alt fa-3x"></i>
+                    <p>CSS3</p>
+                </div>
+                <div class="skills__icon-container">
+                    <i class="fa-brands fa-sass fa-3x"></i>
+                    <p>SCSS</p>
+                </div>
+                <div class="skills__icon-container">
+                    <i class="fa-brands fa-js fa-3x"></i>
+                    <p>JavaScript</p>
+                </div>
+                <div class="skills__icon-container">
+                    <i class="fa-brands fa-github fa-3x"></i>
+                    <p>Github</p>
+                </div>
+                <div class="skills__icon-container">
+                    <i class="fa-brands fa-git-alt fa-3x"></i>
+                    <p>Git</p>
+                </div>
             </section>
 
-            <section
-                class="project-black-background grid-container"
-                id="projects"
-            >
-                <h2>Projects</h2>
-                <hr />
-                <div class="child">
-                    <div class="block">
-                        <i class="fas fa-utensils fa-5x"></i>
-                        <h3>Exploring Sydney</h3>
-                        <p>
-                            This website is a compilation of vegetarian
-                            restaurants recommendations in Sydney.
-                        </p>
-
-                        <a
-                            href="https://exploringsydney.netlify.app"
-                            target="blank"
-                            class="website-link"
-                        >
-                            Visit Site</a
-                        >
+            <section class="projects grid-container" id="projects">
+                <h2 class="projects__heading">Projects</h2>
+                <hr class="projects__fancy-line" />
+                <div class="projects__child-container">
+                    <div class="individual-project">
+                        <img
+                            src="https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg"
+                            class="individual-project__image"
+                            alt="project1"
+                        />
+                        <div class="individual-project__content">
+                            <h3 class="individual-project-heading">
+                                Project 1
+                            </h3>
+                            <p class="individual-project__paragraph">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <div class="individual-project__buttons">
+                                <a
+                                    href="https://exploringsydney.netlify.app"
+                                    target="blank"
+                                    class="individual-project__website-link"
+                                >
+                                    <i class="fas fa-thin fa-eye"></i>
+                                    Preview</a
+                                >
+                                <a
+                                    href="https://exploringsydney.netlify.app"
+                                    target="blank"
+                                    class="individual-project__website-link"
+                                >
+                                    <i class="fas fa-regular fa-code"></i>
+                                    Code</a
+                                >
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="block">
-                        <i class="fas fa-calendar-day fa-5x"></i>
-                        <h3>Calendar</h3>
-                        <p>
-                            Features of the calendar are inspired by the frosty
-                            glass effect. Watercolor background was designed in
-                            Adobe Illustrator.
-                        </p>
-                        <a
-                            href="https://calendar-days.netlify.app"
-                            target="blank"
-                            class="website-link"
-                        >
-                            Visit Site</a
-                        >
+                    <div class="individual-project">
+                        <img
+                            src="https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg"
+                            class="individual-project__image"
+                            alt="project2"
+                        />
+                        <div class="individual-project__content">
+                            <h3 class="individual-project-heading">
+                                Project 2
+                            </h3>
+                            <p class="individual-project__paragraph">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <div class="individual-project__buttons">
+                                <a
+                                    href="https://exploringsydney.netlify.app"
+                                    target="blank"
+                                    class="individual-project__website-link"
+                                >
+                                    <i class="fas fa-thin fa-eye"></i>
+                                    Preview</a
+                                >
+                                <a
+                                    href="https://exploringsydney.netlify.app"
+                                    target="blank"
+                                    class="individual-project__website-link"
+                                >
+                                    <i class="fas fa-regular fa-code"></i>
+                                    Code</a
+                                >
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="block">
-                        <i class="fas fa-clock fa-5x"></i>
-                        <h3>Digital Clock</h3>
-                        <p>
-                            Features include greeting, time, date and two
-                            alternating themes.
-                        </p>
-                        <a
-                            href="https://digitalalarm.netlify.app"
-                            target="blank"
-                            class="website-link"
-                        >
-                            Visit Site</a
-                        >
+                    <div class="individual-project">
+                        <img
+                            src="https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg"
+                            class="individual-project__image"
+                            alt="project3"
+                        />
+                        <div class="individual-project__content">
+                            <h3 class="individual-project-heading">
+                                Project 3
+                            </h3>
+                            <p class="individual-project__paragraph">
+                                Lorem ipsum dolor sit amet, consectetur
+                                adipiscing elit, sed do eiusmod tempor
+                                incididunt ut labore et dolore magna aliqua.
+                            </p>
+                            <div class="individual-project__buttons">
+                                <a
+                                    href="https://exploringsydney.netlify.app"
+                                    target="blank"
+                                    class="individual-project__website-link"
+                                >
+                                    <i class="fas fa-thin fa-eye"></i>
+                                    Preview</a
+                                >
+                                <a
+                                    href="https://exploringsydney.netlify.app"
+                                    target="blank"
+                                    class="individual-project__website-link"
+                                >
+                                    <i class="fas fa-regular fa-code"></i>
+                                    Code</a
+                                >
+                            </div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            <footer class="black-background grid-container" id="contact">
-                <h2>Get in Touch</h2>
-                <hr />
-                <div class="social-media">
+            <footer class="footer grid-container" id="contact">
+                <h2 class="footer__heading">Get in Touch</h2>
+                <hr class="footer__fancy-line" />
+                <div class="footer__social-media">
                     <a
-                        style="color: black"
-                        fa-5x
+                        class="footer__links"
                         href="mailto:ameliadeng37@gmail.com"
                     >
                         <i class="fas fa-envelope fa-3x"></i>
                     </a>
                     <a
-                        style="color: black"
+                        class="footer__links"
                         href="https://github.com/AmX3"
                         title="Github"
                         target="blank"
@@ -184,7 +278,7 @@
                         <i class="fab fa-github fa-3x"></i>
                     </a>
                     <a
-                        style="color: black"
+                        class="footer__links"
                         href="https://www.linkedin.com/in/amelia-deng/"
                         title="LinkedIn"
                         target="blank"
@@ -192,8 +286,10 @@
                         <i class="fab fa-linkedin-in fa-3x"></i>
                     </a>
                 </div>
-                <p>
-                    <span>Made by <strong>Amelia Deng</strong> | </span>
+                <p class="footer__paragraph">
+                    <span>
+                        <strong>Amelia Deng</strong> | All rights reserved @
+                    </span>
                     <span id="currentYear"> </span>
                 </p>
             </footer>
