@@ -7,12 +7,15 @@
         left: 100%;
     }
 }
+
+// from black background to transparent-creates a transparent effect
 @keyframes blink {
     to {
         background: transparent;
     }
 }
 
+// end in a finishing spot
 @keyframes fadeInUp {
     to {
         opacity: 1;
@@ -49,11 +52,13 @@
     &__heading {
         @include mixins.text-style(85px, 100, none, $spacing: 1rem);
         font-family: "Montserrat", monospace;
-        position: relative; /*typewriter covers h1 only and not whole cover*/
+        position: relative; /*typewriter covers h1 only and not whole cover-containing block*/
+        width: max-content;
 
         /*ease forwards means that once the animation is run, it does not repeat itself*/
         //steps = how many letters there are including the space in between words
 
+        // pseudoelements-must have a content between them
         &--animation::before,
         &--animation::after {
             content: "";
@@ -66,13 +71,13 @@
 
         &--animation::before {
             background-color: palette.$primary-color;
-            animation: typewriter 4s steps(12) forwards;
+            animation: typewriter 3s steps(12) forwards;
         }
 
         &--animation::after {
-            width: 3px;
+            width: 0.02em;
             background: palette.$white;
-            animation: typewriter 4s steps(12) forwards,
+            animation: typewriter 3s steps(12) forwards,
                 blink 650ms steps(12) infinite alternate;
         }
     }
@@ -86,7 +91,7 @@
     }
 
     &__button {
-        @extend %font-body-family;
+        font-family: palette.$navbar-font;
         @include mixins.text-style(1em, 300, 26px, $spacing: 0.02em);
         @include mixins.background-and-color(
             palette.$secondary-color,

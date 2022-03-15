@@ -74,6 +74,12 @@
     }
 }
 
+@mixin navbar-toggle {
+    @media only screen and (max-width: palette.$tablet-landscape) {
+        @content;
+    }
+}
+
 // extenders
 %font-body-family {
     font-family: palette.$body-font;

@@ -12,16 +12,13 @@
     z-index: 1000;
     /*#373630*/
 
-    @include mixins.phone {
-        height: 7%;
-    }
-
     &__container {
         @extend %flexbox;
     }
 
     &__menu {
-        @extend %flexbox;
+        // @extend %flexbox;
+        @include mixins.flex($just-cont: flex-end);
     }
 
     &__brand {
@@ -60,72 +57,81 @@
     }
 }
 
-// this whole part needs refixing i.e how to incorporate classes made in javascript
-
 /*ADDING JAVASCRIPT -> HEADER CHANGE*/
 .change-color {
     @include mixins.background-and-color(
         palette.$white,
         palette.$primary-color
     );
+    box-shadow: 0 0 50px #ccc;
 
-    box-shadow: 0.5px 2px rgba(0, 0, 0, 0.1);
+    .navbar {
+        &__links {
+            color: palette.$primary-color;
+            &--contact {
+                color: palette.$white;
+            }
+        }
+
+        &__brand {
+            color: palette.$primary-color;
+        }
+
+        &__toggle {
+            filter: invert(1);
+        }
+    }
 }
 
-.change-color a {
-    color: palette.$primary-color;
-}
-
-.change-color .toggle {
-    filter: invert(1);
-}
-
-/*ATTEMPT WHEN RESIZING WINDOW and this helps target certain elements*/
-@media (max-width: 1080px) {
-    .menu {
-        top: 120px; /*hiding our navbar from view*/
+@include mixins.navbar-toggle {
+    .navbar__menu {
+        top: 70px; /*hiding our navbar from view*/
         left: -100%;
         position: fixed;
         display: block;
-        width: 100%;
-        height: 100vh;
+        @include mixins.height-and-width(90vh, 100%);
         text-align: center;
         transition: 0.5s;
-        background: palette.$white;
         z-index: 999;
-        color: palette.$dark-grey;
+        @include mixins.background-and-color(
+            palette.$white,
+            palette.$dark-grey
+        );
+
+        .navbar {
+            height: 7%;
+
+            &__list {
+                @include mixins.flex($just-cont: center);
+            }
+
+            &__links {
+                color: palette.$primary-color;
+                font-size: 30px;
+
+                &--contact {
+                    color: palette.$white;
+                }
+            }
+        }
     }
 
-    .menu.active {
+    .navbar__menu.active {
         left: 0;
     }
 
-    .menu li {
-        display: flex;
-        justify-content: center;
-    }
-
-    .menu a {
-        color: palette.$primary-color;
-        font-size: 30px;
-    }
-
-    .menu a:hover {
-        color: palette.$primary-color;
-    }
-
-    .toggle {
-        width: 40px;
-        height: 37px;
+    .navbar__toggle {
+        @include mixins.height-and-width(40px, 37px);
         background: url(Images/menu.png);
         background-position: center;
         background-repeat: no-repeat;
         background-size: 30px;
         cursor: pointer;
         float: right;
+        margin-right: 50px;
     }
 
-    .toggle.active {
+    .navbar__toggle.active {
         background: url(Images/close.png);
         background-position: center;
         background-repeat: no-repeat;

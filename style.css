@@ -1,4 +1,4 @@
-.footer__paragraph, .individual-project__paragraph, .about__container, .landing-page__para, .landing-page__button {
+.footer__paragraph, .individual-project__paragraph, .about__container, .landing-page__para {
   font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
 }
 
@@ -6,7 +6,7 @@
   font-family: Sackers Gothic Medium, Verdana, Helvetica, sans-serif;
 }
 
-.about__container, .navbar__container, .navbar__menu {
+.about__container, .navbar__container {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -48,10 +48,13 @@
   z-index: 1000;
   /*#373630*/
 }
-@media only screen and (max-width: 375px) {
-  .navbar {
-    height: 7%;
-  }
+.navbar__menu {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  flex-wrap: nowrap;
 }
 .navbar__brand {
   font-size: 2em;
@@ -95,65 +98,73 @@
 /*ADDING JAVASCRIPT -> HEADER CHANGE*/
 .change-color {
   background-color: white;
-  color: #080a09;
-  box-shadow: 0.5px 2px rgba(0, 0, 0, 0.1);
+  color: #0c111a;
+  box-shadow: 0 0 50px #ccc;
 }
-
-.change-color a {
-  color: #080a09;
+.change-color .navbar__links {
+  color: #0c111a;
 }
-
-.change-color .toggle {
+.change-color .navbar__links--contact {
+  color: white;
+}
+.change-color .navbar__brand {
+  color: #0c111a;
+}
+.change-color .navbar__toggle {
   filter: invert(1);
 }
 
-/*ATTEMPT WHEN RESIZING WINDOW and this helps target certain elements*/
-@media (max-width: 1080px) {
-  .menu {
-    top: 120px;
+@media only screen and (max-width: 1200px) {
+  .navbar__menu {
+    top: 70px;
     /*hiding our navbar from view*/
     left: -100%;
     position: fixed;
     display: block;
+    height: 90vh;
     width: 100%;
-    height: 100vh;
     text-align: center;
     transition: 0.5s;
-    background: white;
     z-index: 999;
+    background-color: white;
     color: #111;
   }
+  .navbar__menu .navbar {
+    height: 7%;
+  }
+  .navbar__menu .navbar__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    flex-wrap: nowrap;
+  }
+  .navbar__menu .navbar__links {
+    color: #0c111a;
+    font-size: 30px;
+  }
+  .navbar__menu .navbar__links--contact {
+    color: white;
+  }
 
-  .menu.active {
+  .navbar__menu.active {
     left: 0;
   }
 
-  .menu li {
-    display: flex;
-    justify-content: center;
-  }
-
-  .menu a {
-    color: #080a09;
-    font-size: 30px;
-  }
-
-  .menu a:hover {
-    color: #080a09;
-  }
-
-  .toggle {
-    width: 40px;
-    height: 37px;
+  .navbar__toggle {
+    height: 40px;
+    width: 37px;
     background: url(Images/menu.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: 30px;
     cursor: pointer;
     float: right;
+    margin-right: 50px;
   }
 
-  .toggle.active {
+  .navbar__toggle.active {
     background: url(Images/close.png);
     background-position: center;
     background-repeat: no-repeat;
@@ -182,7 +193,7 @@
 }
 
 .landing-page {
-  background-color: #080a09;
+  background-color: #0c111a;
   color: white;
   background-size: cover;
   min-height: 100vh;
@@ -221,7 +232,8 @@
   text-decoration: none;
   font-family: "Montserrat", monospace;
   position: relative;
-  /*typewriter covers h1 only and not whole cover*/
+  /*typewriter covers h1 only and not whole cover-containing block*/
+  width: max-content;
   /*ease forwards means that once the animation is run, it does not repeat itself*/
 }
 .landing-page__heading--animation::before, .landing-page__heading--animation::after {
@@ -233,13 +245,13 @@
   right: 0;
 }
 .landing-page__heading--animation::before {
-  background-color: #080a09;
-  animation: typewriter 4s steps(12) forwards;
+  background-color: #0c111a;
+  animation: typewriter 3s steps(12) forwards;
 }
 .landing-page__heading--animation::after {
-  width: 3px;
+  width: 0.02em;
   background: white;
-  animation: typewriter 4s steps(12) forwards, blink 650ms steps(12) infinite alternate;
+  animation: typewriter 3s steps(12) forwards, blink 650ms steps(12) infinite alternate;
 }
 .landing-page__para {
   font-size: 41px;
@@ -253,6 +265,7 @@
   animation: fadeInUp 2s ease 4s forwards;
 }
 .landing-page__button {
+  font-family: Sackers Gothic Medium, Verdana, Helvetica, sans-serif;
   font-size: 1em;
   font-weight: 300;
   line-height: 26px;
@@ -367,14 +380,14 @@
 }
 
 .skills {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  flex-direction: row;
-  text-align: center;
-  flex-wrap: nowrap;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 50px;
   background-color: #f2f2f2;
-  color: #080a09;
+  color: #0c111a;
+}
+.skills__icon-container {
+  text-align: center;
 }
 @media only screen and (max-width: 375px) {
   .skills {
@@ -389,7 +402,7 @@
 }
 
 .projects {
-  background-color: #080a09;
+  background-color: #0c111a;
   color: white;
   padding: 55px;
 }
@@ -406,7 +419,7 @@
     flex-direction: column;
     text-align: center;
     flex-wrap: wrap;
-    height: 100%;
+    height: fit-content;
   }
 }
 @media only screen and (min-width: 376px) and (max-width: 950px) {
@@ -457,10 +470,11 @@
 .individual-project__content {
   padding: 25px 0;
 }
-.individual-project__content--heading {
-  font-size: 32px;
-  font-weight: 600;
-  line-height: 36px;
+.individual-project__heading {
+  font-family: Sackers Gothic Medium, Verdana, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 27px;
   letter-spacing: 0.02em;
   text-transform: none;
   text-decoration: none;
@@ -514,7 +528,7 @@
   margin-bottom: 40px;
 }
 .footer__links {
-  color: #080a09;
+  color: #0c111a;
   opacity: 0.8;
 }
 .footer__links:hover {

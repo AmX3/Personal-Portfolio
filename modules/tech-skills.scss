@@ -6,11 +6,17 @@
 }
 
 .skills {
-    @include mixins.flex($just-cont: space-around);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 50px;
     @include mixins.background-and-color(
         palette.$light-grey,
         palette.$primary-color
     );
+
+    &__icon-container {
+        text-align: center;
+    }
 
     @include mixins.phone {
         display: grid;
