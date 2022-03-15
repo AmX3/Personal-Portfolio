@@ -14,13 +14,19 @@
             href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
             rel="stylesheet"
         />
+        <link
+            href="//fonts.googleapis.com/css?family=Source Sans Pro|Montserrat"
+            rel="stylesheet"
+            type="text/css"
+        />
     </head>
 
     <body>
         <nav class="navbar">
             <div class="navbar__container">
                 <a class="navbar__brand" href="#">AD</a>
-                <ul class="navbar__menu menu">
+                <div class="navbar__toggle" onclick="toggleMenu()" ;></div>
+                <ul class="navbar__menu">
                     <li class="navbar__list">
                         <a
                             href="#"
@@ -60,7 +66,6 @@
                     </li>
                 </ul>
             </div>
-            <div class="navbar__toggle" onclick="toggleMenu()" ;></div>
         </nav>
 
         <div class="grid-wrapper">
@@ -71,7 +76,7 @@
                     >
                         Amelia Deng.
                     </h1>
-                    <p class="landing-page__para">Aspiring Web Developer</p>
+                    <p class="landing-page__para">Aspiring "title" Developer</p>
                     <a
                         href="#about"
                         class="landing-page__button landing-page__button--hover"
@@ -144,6 +149,26 @@
                     <i class="fa-brands fa-git-alt fa-3x"></i>
                     <p>Git</p>
                 </div>
+                <div class="skills__icon-container">
+                    <i class="fa-brands fa-java fa-3x"></i>
+                    <p>Java</p>
+                </div>
+                <div class="skills__icon-container">
+                    <i class="fa-brands fa-react fa-3x"></i>
+                    <p>React</p>
+                </div>
+                <div class="skills__icon-container">
+                    <i class="fa-brands fa-react fa-3x"></i>
+                    <p>SpringBoot</p>
+                </div>
+                <div class="skills__icon-container">
+                    <i class="fa-brands fa-react fa-3x"></i>
+                    <p>SQL</p>
+                </div>
+                <div class="skills__icon-container">
+                    <i class="fa-brands fa-react fa-3x"></i>
+                    <p>Firebase/FireStore</p>
+                </div>
             </section>
 
             <section class="projects grid-container" id="projects">
@@ -157,7 +182,7 @@
                             alt="project1"
                         />
                         <div class="individual-project__content">
-                            <h3 class="individual-project-heading">
+                            <h3 class="individual-project__heading">
                                 Project 1
                             </h3>
                             <p class="individual-project__paragraph">
@@ -193,7 +218,7 @@
                             alt="project2"
                         />
                         <div class="individual-project__content">
-                            <h3 class="individual-project-heading">
+                            <h3 class="individual-project__heading">
                                 Project 2
                             </h3>
                             <p class="individual-project__paragraph">
@@ -228,7 +253,7 @@
                             alt="project3"
                         />
                         <div class="individual-project__content">
-                            <h3 class="individual-project-heading">
+                            <h3 class="individual-project__heading">
                                 Project 3
                             </h3>
                             <p class="individual-project__paragraph">
