@@ -64,14 +64,14 @@
     }
 
     &__image-container {
-        position: relative;
+        position: relative; /*allows content to be adjusted from normal positon*/
     }
 
     &__image {
         max-width: 100%;
         height: auto;
         border-radius: 2em 2em 0 0;
-        display: block;
+        display: block; /*removes tiny space at bottom of image */
     }
 
     &__image-overlay {
@@ -86,11 +86,12 @@
             $align-itm: center
         );
         opacity: 0; /*text is hidden by default*/
-        transition: opacity 0.25s;
+        transition: backdrop-filter 0.25s; /*no delay in blur effect*/
     }
 
-    &__image-overlay--blur {
-        border-radius: 2em 2em 0 0;
+    &__image-overlay-blur {
+        border-radius: 4em 4em 0 0; /*removes fuzzy black edge at top*/
+        border-style: none;
         backdrop-filter: blur(5px);
     }
 
@@ -111,11 +112,11 @@
 
     &__featured-skills {
         @include mixins.background-and-color(
-            palette.$secondary-color,
-            palette.$white
+            palette.$primary-color,
+            palette.$light-blue
         );
-
-        padding: 1em 1em;
+        @extend %font-navbar-family;
+        padding: 0.5em 1em;
     }
 
     &__content {
