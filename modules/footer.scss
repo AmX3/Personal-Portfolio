@@ -16,9 +16,40 @@
         @extend %fancy-line;
     }
 
+    &__content-container {
+        @include mixins.flex($just-cont: space-around);
+        margin-bottom: 120px;
+    }
+
+    &__contact-form {
+        // @include mixins.flex($flx-dir: column);
+        display: grid;
+
+        grid-template-columns: 1fr 1.5fr;
+        grid-gap: 20px 30px;
+        @extend %font-body-family;
+    }
+
+    &__contact-form-input {
+        outline: none;
+    }
+
+    &__contact-form-input--no-resize {
+        resize: none;
+    }
+
+    &__form-buttons {
+        @include mixins.background-and-color(
+            palette.$primary-color,
+            palette.$light-blue
+        );
+        @extend %font-navbar-family;
+        padding: 0.5em 1em;
+    }
+
     &__social-media {
-        @include mixins.flex($just-cont: space-evenly);
-        margin-bottom: 40px;
+        @include mixins.flex($just-cont: space-between);
+        width: 25%;
     }
 
     &__links {

@@ -76,7 +76,7 @@
                     >
                         Amelia Deng.
                     </h1>
-                    <p class="landing-page__para">Aspiring "title" Developer</p>
+                    <p class="landing-page__para">Aspiring Web Developer</p>
                     <a
                         href="#about"
                         class="landing-page__button landing-page__button--hover"
@@ -186,22 +186,22 @@
                                 alt="project1"
                             />
                             <div
-                                class="individual-project__image-overlay individual-project__image-overlay--blur"
+                                class="individual-project__image-overlay individual-project__image-overlay-blur"
                             >
                                 <div
                                     class="individual-project__featured-skills"
                                 >
-                                    React
+                                    HTML5
                                 </div>
                                 <div
                                     class="individual-project__featured-skills"
                                 >
-                                    React
+                                    CSS3
                                 </div>
                                 <div
                                     class="individual-project__featured-skills"
                                 >
-                                    React
+                                    Javascript
                                 </div>
                             </div>
                         </div>
@@ -236,11 +236,32 @@
                     </div>
 
                     <div class="individual-project">
-                        <img
-                            src="https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg"
-                            class="individual-project__image"
-                            alt="project2"
-                        />
+                        <div class="individual-project__image-container">
+                            <img
+                                src="https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg"
+                                class="individual-project__image"
+                                alt="project1"
+                            />
+                            <div
+                                class="individual-project__image-overlay individual-project__image-overlay-blur"
+                            >
+                                <div
+                                    class="individual-project__featured-skills"
+                                >
+                                    HTML5
+                                </div>
+                                <div
+                                    class="individual-project__featured-skills"
+                                >
+                                    CSS3
+                                </div>
+                                <div
+                                    class="individual-project__featured-skills"
+                                >
+                                    Javascript
+                                </div>
+                            </div>
+                        </div>
                         <div class="individual-project__content">
                             <h3 class="individual-project__heading">
                                 Project 2
@@ -271,11 +292,32 @@
                         </div>
                     </div>
                     <div class="individual-project">
-                        <img
-                            src="https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg"
-                            class="individual-project__image"
-                            alt="project3"
-                        />
+                        <div class="individual-project__image-container">
+                            <img
+                                src="https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg"
+                                class="individual-project__image"
+                                alt="project1"
+                            />
+                            <div
+                                class="individual-project__image-overlay individual-project__image-overlay-blur"
+                            >
+                                <div
+                                    class="individual-project__featured-skills"
+                                >
+                                    HTML5
+                                </div>
+                                <div
+                                    class="individual-project__featured-skills"
+                                >
+                                    CSS3
+                                </div>
+                                <div
+                                    class="individual-project__featured-skills"
+                                >
+                                    Javascript
+                                </div>
+                            </div>
+                        </div>
                         <div class="individual-project__content">
                             <h3 class="individual-project__heading">
                                 Project 3
@@ -311,30 +353,73 @@
             <footer class="footer grid-container" id="contact">
                 <h2 class="footer__heading">Get in Touch</h2>
                 <hr class="footer__fancy-line" />
-                <div class="footer__social-media">
-                    <a
-                        class="footer__links"
-                        href="mailto:ameliadeng37@gmail.com"
+                <div class="footer__content-container">
+                    <div class="footer__social-media">
+                        <a
+                            class="footer__links"
+                            href="mailto:ameliadeng37@gmail.com"
+                        >
+                            <i class="fas fa-envelope fa-3x"></i>
+                        </a>
+                        <a
+                            class="footer__links"
+                            href="https://github.com/AmX3"
+                            title="Github"
+                            target="blank"
+                        >
+                            <i class="fab fa-github fa-3x"></i>
+                        </a>
+                        <a
+                            class="footer__links"
+                            href="https://www.linkedin.com/in/amelia-deng/"
+                            title="LinkedIn"
+                            target="blank"
+                        >
+                            <i class="fab fa-linkedin-in fa-3x"></i>
+                        </a>
+                    </div>
+                    <form
+                        action="https://formspree.io/f/mleznndb"
+                        method="POST"
+                        class="footer__contact-form"
                     >
-                        <i class="fas fa-envelope fa-3x"></i>
-                    </a>
-                    <a
-                        class="footer__links"
-                        href="https://github.com/AmX3"
-                        title="Github"
-                        target="blank"
-                    >
-                        <i class="fab fa-github fa-3x"></i>
-                    </a>
-                    <a
-                        class="footer__links"
-                        href="https://www.linkedin.com/in/amelia-deng/"
-                        title="LinkedIn"
-                        target="blank"
-                    >
-                        <i class="fab fa-linkedin-in fa-3x"></i>
-                    </a>
+                        <label for="firstName">First Name:</label>
+                        <input
+                            class="footer__contact-form-input"
+                            type="text"
+                            name="Name"
+                            id="firstName"
+                            required
+                        />
+                        <label for="email">Email:</label>
+                        <input
+                            class="footer__contact-form-input"
+                            type="email"
+                            name="Email"
+                            id="email"
+                            required
+                        />
+                        <label for="message">Message:</label>
+                        <textarea
+                            class="footer__contact-form-input footer__contact-form-input--no-resize"
+                            type="text"
+                            placeholder="Leave your message here."
+                            name="Message"
+                            id="message"
+                            rows="3"
+                            cols="20"
+                            required
+                        ></textarea>
+
+                        <button class="footer__form-buttons" type="reset">
+                            Clear
+                        </button>
+                        <button class="footer__form-buttons" type="submit">
+                            Submit
+                        </button>
+                    </form>
                 </div>
+
                 <p class="footer__paragraph">
                     <span>
                         <strong>Amelia Deng</strong> | All rights reserved @

@@ -24,10 +24,10 @@ html {
     display: grid;
     grid-template-areas:
         "hd hd hd hd hd  "
-        ". .  about  . ."
+        ". about  about  about ."
         "tech tech tech tech tech"
         "projects projects projects projects projects "
-        " . . footer . . ";
+        " . footer footer footer . ";
 }
 
 .grid-container {
