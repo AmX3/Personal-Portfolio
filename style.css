@@ -462,10 +462,50 @@
     width: 75%;
   }
 }
+.individual-project__image-container {
+  position: relative;
+}
 .individual-project__image {
   max-width: 100%;
   height: auto;
   border-radius: 2em 2em 0 0;
+  display: block;
+}
+.individual-project__image-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  flex-wrap: nowrap;
+  opacity: 0;
+  /*text is hidden by default*/
+  transition: opacity 0.25s;
+}
+.individual-project__image-overlay--blur {
+  border-radius: 2em 2em 0 0;
+  backdrop-filter: blur(5px);
+}
+.individual-project__image-overlay:hover {
+  opacity: 1;
+}
+.individual-project__image-overlay > * {
+  transform: translateY(20px);
+  /*text is pushed down 20px from original position*/
+  transition: transform 0.25s;
+}
+.individual-project__image-overlay:hover > * {
+  transform: translateY(0);
+}
+.individual-project__featured-skills {
+  background-color: #1778ed;
+  color: white;
+  padding: 1em 1em;
 }
 .individual-project__content {
   padding: 25px 0;

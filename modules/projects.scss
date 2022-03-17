@@ -63,10 +63,59 @@
         width: 75%;
     }
 
+    &__image-container {
+        position: relative;
+    }
+
     &__image {
         max-width: 100%;
         height: auto;
         border-radius: 2em 2em 0 0;
+        display: block;
+    }
+
+    &__image-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        @include mixins.flex(
+            // $flx-dir: column,
+            $just-cont: space-around,
+            $align-itm: center
+        );
+        opacity: 0; /*text is hidden by default*/
+        transition: opacity 0.25s;
+    }
+
+    &__image-overlay--blur {
+        border-radius: 2em 2em 0 0;
+        backdrop-filter: blur(5px);
+    }
+
+    &__image-overlay:hover {
+        opacity: 1;
+    }
+
+    &__image-overlay > * {
+        transform: translateY(
+            20px
+        ); /*text is pushed down 20px from original position*/
+        transition: transform 0.25s;
+    }
+
+    &__image-overlay:hover > * {
+        transform: translateY(0);
+    }
+
+    &__featured-skills {
+        @include mixins.background-and-color(
+            palette.$secondary-color,
+            palette.$white
+        );
+
+        padding: 1em 1em;
     }
 
     &__content {
