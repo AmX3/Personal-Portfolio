@@ -108,4 +108,11 @@
             text-shadow: 0px 0px 5px palette.$white;
         }
     }
+
+    &__arrow {
+        transition: all 200ms ease-in-out;
+    }
+    &__arrow:hover {
+        transform: rotate(90deg);
+    }
 }

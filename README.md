@@ -1,6 +1,6 @@
 # Portfolio (WIP)
 
-This includes all my recent projects up to date, each with a brief summary.
+A single-page responsive portfolio showcasing my most recent projects, each with a brief description. This website design strives to display on multiple devices and screen sizes, great and small.
 
 ## Live Site
 
