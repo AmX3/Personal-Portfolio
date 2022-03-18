@@ -18,14 +18,14 @@
         @extend %flexbox;
         @include mixins.text-style(16px, 300, 27px);
         @extend %font-body-family;
-
+        gap: 50px;
         @include mixins.phone {
             @include mixins.flex(
                 $flx-dir: column,
                 $just-cont: space-evenly,
                 $flex-wrap: wrap
             );
-            gap: 50px;
+            // gap: 50px;
         }
 
         @include mixins.tablet-portrait {
@@ -34,12 +34,12 @@
                 $just-cont: space-evenly,
                 $flex-wrap: wrap
             );
-            gap: 50px;
+            // gap: 50px;
         }
 
         @include mixins.tablet-landscape {
-            @include mixins.flex($flex-wrap: nowrap);
-            gap: 50px;
+            @include mixins.flex($flx-dir: column, $flex-wrap: nowrap);
+            // gap: 50px;
         }
     }
 
@@ -49,11 +49,15 @@
     }
 
     &__image {
-        @include mixins.height-and-width(100%, 60%);
+        // @include mixins.height-and-width(100%, 50%);
+        height: 300px;
+        width: 300px;
 
-        @include mixins.tablet-landscape {
-            @include mixins.height-and-width(100%, 100%);
-        }
+        // @include mixins.tablet-landscape {
+        //     @include mixins.height-and-width(100%, 40%);
+        // }
+
+        box-shadow: 10px 15px 25px 0 rgba(0, 0, 0, 0.2);
     }
 
     &__para-box {

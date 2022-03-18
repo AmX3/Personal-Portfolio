@@ -6,21 +6,31 @@
 }
 
 .skills {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 50px;
     @include mixins.background-and-color(
         palette.$light-grey,
         palette.$primary-color
     );
+    &__heading {
+        @extend %heading;
+    }
+
+    &__fancy-line {
+        @extend %fancy-line;
+    }
+
+    &__icon {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 50px;
+
+        @include mixins.phone {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 50px;
+        }
+    }
 
     &__icon-container {
         text-align: center;
-    }
-
-    @include mixins.phone {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 50px;
     }
 }

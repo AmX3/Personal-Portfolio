@@ -52,7 +52,7 @@
 .individual-project {
     @include mixins.flex($flx-dir: column);
     @include mixins.background-and-color(palette.$darker-grey, palette.$white);
-    transition: 200ms ease-in-out;
+    transition: all 0.2s ease-in-out; /*for transform scale effect*/
     border-radius: 2em;
 
     @include mixins.phone {
@@ -90,8 +90,7 @@
     }
 
     &__image-overlay-blur {
-        border-radius: 4em 4em 0 0; /*removes fuzzy black edge at top*/
-        border-style: none;
+        border-radius: 2em 2em 0 0; /*removes fuzzy black edge at top*/
         backdrop-filter: blur(5px);
     }
 
@@ -136,11 +135,6 @@
     }
 
     &__website-link {
-        @include mixins.background-and-color(
-            palette.$neutral-grey,
-            palette.$white
-        );
-
         @include mixins.text-style(
             14px,
             100,
@@ -150,8 +144,8 @@
         );
 
         @include mixins.background-and-color(
-            palette.$secondary-color,
-            palette.$white
+            palette.$sky-blue,
+            palette.$primary-color
         );
         border-radius: 50px;
         padding: 1em 1em;
@@ -166,4 +160,8 @@
         );
         letter-spacing: 0.2em;
     }
+}
+
+.individual-project:hover {
+    transform: scale(1.03);
 }

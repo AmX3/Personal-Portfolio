@@ -9,6 +9,7 @@
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
             rel="stylesheet"
+            media="all"
         />
         <link
             href="http://maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css"
@@ -80,8 +81,11 @@
                     <a
                         href="#about"
                         class="landing-page__button landing-page__button--hover"
-                        >About Me</a
-                    >
+                        >About Me
+                        <i
+                            class="fa-solid fa-arrow-right landing-page__arrow"
+                        ></i
+                    ></a>
                 </div>
             </header>
 
@@ -97,7 +101,7 @@
                         /> -->
                         <img
                             class="about__image"
-                            src="https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg"
+                            src="Images/converted photo.png"
                             alt="photo"
                         />
                     </div>
@@ -128,49 +132,53 @@
             </section>
 
             <section class="skills grid-container" id="techSkills">
-                <div class="skills__icon-container">
-                    <i class="fa fa-html5 fa-3x"></i>
-                    <p>HTML5</p>
-                </div>
-                <div class="skills__icon-container">
-                    <i class="fa-brands fa-css3-alt fa-3x"></i>
-                    <p>CSS3</p>
-                </div>
-                <div class="skills__icon-container">
-                    <i class="fa-brands fa-sass fa-3x"></i>
-                    <p>SCSS</p>
-                </div>
-                <div class="skills__icon-container">
-                    <i class="fa-brands fa-js fa-3x"></i>
-                    <p>JavaScript</p>
-                </div>
-                <div class="skills__icon-container">
-                    <i class="fa-brands fa-github fa-3x"></i>
-                    <p>Github</p>
-                </div>
-                <div class="skills__icon-container">
-                    <i class="fa-brands fa-git-alt fa-3x"></i>
-                    <p>Git</p>
-                </div>
-                <div class="skills__icon-container">
-                    <i class="fa-brands fa-java fa-3x"></i>
-                    <p>Java</p>
-                </div>
-                <div class="skills__icon-container">
-                    <i class="fa-brands fa-react fa-3x"></i>
-                    <p>React</p>
-                </div>
-                <div class="skills__icon-container">
-                    <i class="fa-brands fa-react fa-3x"></i>
-                    <p>SpringBoot</p>
-                </div>
-                <div class="skills__icon-container">
-                    <i class="fa-brands fa-react fa-3x"></i>
-                    <p>SQL</p>
-                </div>
-                <div class="skills__icon-container">
-                    <i class="fa-brands fa-react fa-3x"></i>
-                    <p>Firebase/FireStore</p>
+                <h2 class="skills__heading">Tech Stack</h2>
+                <hr class="skills__fancy-line" />
+                <div class="skills__icon">
+                    <div class="skills__icon-container">
+                        <i class="fa fa-html5 fa-3x"></i>
+                        <p>HTML5</p>
+                    </div>
+                    <div class="skills__icon-container">
+                        <i class="fa-brands fa-css3-alt fa-3x"></i>
+                        <p>CSS3</p>
+                    </div>
+                    <div class="skills__icon-container">
+                        <i class="fa-brands fa-sass fa-3x"></i>
+                        <p>SCSS</p>
+                    </div>
+                    <div class="skills__icon-container">
+                        <i class="fa-brands fa-js fa-3x"></i>
+                        <p>JavaScript</p>
+                    </div>
+                    <div class="skills__icon-container">
+                        <i class="fa-brands fa-github fa-3x"></i>
+                        <p>Github</p>
+                    </div>
+                    <div class="skills__icon-container">
+                        <i class="fa-brands fa-git-alt fa-3x"></i>
+                        <p>Git</p>
+                    </div>
+                    <div class="skills__icon-container">
+                        <i class="fa-brands fa-java fa-3x"></i>
+                        <p>Java</p>
+                    </div>
+                    <div class="skills__icon-container">
+                        <i class="fa-brands fa-react fa-3x"></i>
+                        <p>React</p>
+                    </div>
+                    <div class="skills__icon-container">
+                        <i class="fa-brands fa-react fa-3x"></i>
+                        <p>SpringBoot</p>
+                    </div>
+                    <div class="skills__icon-container">
+                        <i class="fa-brands fa-react fa-3x"></i>
+                        <p>SQL</p>
+                    </div>
+                    <div class="skills__icon-container">
+                        <i class="fa-brands fa-react fa-3x"></i>
+                        <p>Firebase/FireStore</p>
+                    </div>
                 </div>
             </section>
 
@@ -353,77 +361,33 @@
             <footer class="footer grid-container" id="contact">
                 <h2 class="footer__heading">Get in Touch</h2>
                 <hr class="footer__fancy-line" />
-                <div class="footer__content-container">
-                    <div class="footer__social-media">
-                        <a
-                            class="footer__links"
-                            href="mailto:ameliadeng37@gmail.com"
-                        >
-                            <i class="fas fa-envelope fa-3x"></i>
-                        </a>
-                        <a
-                            class="footer__links"
-                            href="https://github.com/AmX3"
-                            title="Github"
-                            target="blank"
-                        >
-                            <i class="fab fa-github fa-3x"></i>
-                        </a>
-                        <a
-                            class="footer__links"
-                            href="https://www.linkedin.com/in/amelia-deng/"
-                            title="LinkedIn"
-                            target="blank"
-                        >
-                            <i class="fab fa-linkedin-in fa-3x"></i>
-                        </a>
-                    </div>
-                    <form
-                        action="https://formspree.io/f/mleznndb"
-                        method="POST"
-                        class="footer__contact-form"
+                <div class="footer__social-media">
+                    <a
+                        class="footer__links"
+                        href="mailto:ameliadeng37@gmail.com"
                     >
-                        <label for="firstName">First Name:</label>
-                        <input
-                            class="footer__contact-form-input"
-                            type="text"
-                            name="Name"
-                            id="firstName"
-                            required
-                        />
-                        <label for="email">Email:</label>
-                        <input
-                            class="footer__contact-form-input"
-                            type="email"
-                            name="Email"
-                            id="email"
-                            required
-                        />
-                        <label for="message">Message:</label>
-                        <textarea
-                            class="footer__contact-form-input footer__contact-form-input--no-resize"
-                            type="text"
-                            placeholder="Leave your message here."
-                            name="Message"
-                            id="message"
-                            rows="3"
-                            cols="20"
-                            required
-                        ></textarea>
-
-                        <button class="footer__form-buttons" type="reset">
-                            Clear
-                        </button>
-                        <button class="footer__form-buttons" type="submit">
-                            Submit
-                        </button>
-                    </form>
+                        <i class="fas fa-envelope fa-3x"></i>
+                    </a>
+                    <a
+                        class="footer__links"
+                        href="https://github.com/AmX3"
+                        title="Github"
+                        target="blank"
+                    >
+                        <i class="fab fa-github fa-3x"></i>
+                    </a>
+                    <a
+                        class="footer__links"
+                        href="https://www.linkedin.com/in/amelia-deng/"
+                        title="LinkedIn"
+                        target="blank"
+                    >
+                        <i class="fab fa-linkedin-in fa-3x"></i>
+                    </a>
                 </div>
 
                 <p class="footer__paragraph">
-                    <span>
-                        <strong>Amelia Deng</strong> | All rights reserved @
-                    </span>
+                    <span> <strong>Amelia Deng</strong> | </span>
                     <span id="currentYear"> </span>
                 </p>
             </footer>
