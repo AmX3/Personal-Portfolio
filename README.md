@@ -27,6 +27,6 @@ Interested in front-end development, my end-goal is to utilise my educational ba
 
 The foundations of my portfolio are created using Flexbox & CSS Grid. Fontawesome icons were used.
 
-<Insert rough initial design >
+![image](Images/FinalDesign.jpg)
 
 ## Portfolio Screenshots
