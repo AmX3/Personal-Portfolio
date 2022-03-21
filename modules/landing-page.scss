@@ -38,7 +38,6 @@
 
     &__content {
         @include mixins.flex($just-cont: space-evenly, $flx-dir: column);
-        // width: max-content;
         @include mixins.phone {
             @include mixins.flex(
                 $flx-dir: column,
@@ -112,6 +111,7 @@
     &__arrow {
         transition: all 200ms ease-in-out;
     }
+
     &__arrow:hover {
         transform: rotate(90deg);
     }

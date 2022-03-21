@@ -6,8 +6,6 @@
 }
 
 .footer {
-    background: palette.$white;
-
     &__heading {
         @extend %heading;
     }
@@ -22,12 +20,24 @@
     }
 
     &__links {
-        color: palette.$primary-color;
+        @include mixins.background-and-color(
+            palette.$link-background,
+            palette.$primary-color
+        );
         opacity: 0.8;
+        border-radius: 30%;
+        box-shadow: 0px 5px 15px -5px palette.$link-shadow;
+        transition: all 0.25s;
+        padding: 9px;
     }
 
     &__links:hover {
         opacity: 1;
+        transform: scale(1.1);
+        @include mixins.background-and-color(
+            palette.$primary-color,
+            palette.$light-blue
+        );
     }
 
     &__paragraph {

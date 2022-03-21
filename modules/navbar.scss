@@ -17,7 +17,6 @@
     }
 
     &__menu {
-        // @extend %flexbox;
         @include mixins.flex($just-cont: flex-end);
     }
 
