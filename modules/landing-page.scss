@@ -50,7 +50,7 @@
 
     &__heading {
         @include mixins.text-style(85px, 100, none, $spacing: 1rem);
-        font-family: "Montserrat", monospace;
+        font-family: "Source Code Sans Pro", monospace;
         position: relative; /*typewriter covers h1 only and not whole cover-containing block*/
         width: max-content;
 
@@ -70,13 +70,13 @@
 
         &--animation::before {
             background-color: palette.$primary-color;
-            animation: typewriter 3s steps(12) forwards;
+            animation: typewriter 2s steps(12) forwards;
         }
 
         &--animation::after {
             width: 0.02em;
             background: palette.$white;
-            animation: typewriter 3s steps(12) forwards,
+            animation: typewriter 2s steps(12) forwards,
                 blink 650ms steps(12) infinite alternate;
         }
     }
@@ -86,7 +86,7 @@
         @include mixins.text-style(41px, 300, 70px, $spacing: 0.02em);
         opacity: 0;
         transform: translateY(3rem);
-        animation: fadeInUp 2s ease 4s forwards;
+        animation: fadeInUp 2s ease 3s forwards;
     }
 
     &__button {
@@ -101,7 +101,7 @@
         border-radius: 50px;
         opacity: 0;
         transform: translateY(3rem);
-        animation: fadeInUp 2s ease 5s forwards;
+        animation: fadeInUp 2s ease 4s forwards;
 
         &--hover:hover {
             text-shadow: 0px 0px 5px palette.$white;
