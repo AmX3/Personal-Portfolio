@@ -1,4 +1,4 @@
-.footer__paragraph, .individual-project__paragraph, .about__container, .landing-page__para {
+.footer__paragraph, .individual-project__paragraph, .skills__icon-container, .about__container, .landing-page__para {
   font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
 }
 
@@ -233,7 +233,7 @@
   letter-spacing: 1rem;
   text-transform: none;
   text-decoration: none;
-  font-family: "Montserrat", monospace;
+  font-family: "Source Code Sans Pro", monospace;
   position: relative;
   /*typewriter covers h1 only and not whole cover-containing block*/
   width: max-content;
@@ -249,12 +249,12 @@
 }
 .landing-page__heading--animation::before {
   background-color: #0c111a;
-  animation: typewriter 3s steps(12) forwards;
+  animation: typewriter 2s steps(12) forwards;
 }
 .landing-page__heading--animation::after {
   width: 0.02em;
   background: white;
-  animation: typewriter 3s steps(12) forwards, blink 650ms steps(12) infinite alternate;
+  animation: typewriter 2s steps(12) forwards, blink 650ms steps(12) infinite alternate;
 }
 .landing-page__para {
   font-size: 41px;
@@ -265,7 +265,7 @@
   text-decoration: none;
   opacity: 0;
   transform: translateY(3rem);
-  animation: fadeInUp 2s ease 4s forwards;
+  animation: fadeInUp 2s ease 3s forwards;
 }
 .landing-page__button {
   font-family: Sackers Gothic Medium, Verdana, Helvetica, sans-serif;
@@ -282,7 +282,7 @@
   border-radius: 50px;
   opacity: 0;
   transform: translateY(3rem);
-  animation: fadeInUp 2s ease 5s forwards;
+  animation: fadeInUp 2s ease 4s forwards;
 }
 .landing-page__button--hover:hover {
   text-shadow: 0px 0px 5px white;
@@ -385,17 +385,26 @@
   background-color: #f2f2f2;
   color: #0c111a;
 }
-.skills__icon {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  gap: 50px;
+.skills__tech-skills {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-direction: row;
+  text-align: center;
+  flex-wrap: nowrap;
 }
 @media only screen and (max-width: 375px) {
-  .skills__icon {
+  .skills__tech-skills {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 50px;
   }
+}
+.skills__tech-skills--spacing {
+  margin-bottom: 50px;
+}
+.skills__icon {
+  margin-bottom: 10px;
 }
 .skills__icon-container {
   text-align: center;

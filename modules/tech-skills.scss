@@ -18,19 +18,24 @@
         @extend %fancy-line;
     }
 
-    &__icon {
-        display: grid;
-        grid-template-columns: repeat(6, 1fr);
-        gap: 50px;
-
+    &__tech-skills {
+        @include mixins.flex($just-cont: space-evenly);
         @include mixins.phone {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 50px;
         }
+        &--spacing {
+            margin-bottom: 50px;
+        }
+    }
+
+    &__icon {
+        margin-bottom: 10px;
     }
 
     &__icon-container {
         text-align: center;
+        @extend %font-body-family;
     }
 }
