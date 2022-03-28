@@ -161,3 +161,10 @@
 .individual-project:hover {
     transform: scale(1.03);
 }
+
+.individual-project2 {
+    @include mixins.flex($just-cont: none, $flx-dir: column);
+    @include mixins.background-and-color(palette.$darker-grey, palette.$white);
+    transition: all 0.2s ease-in-out;
+    border-radius: 2em;
+}

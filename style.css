@@ -3,7 +3,7 @@
 }
 
 .individual-project__featured-skills, .navbar {
-  font-family: Sackers Gothic Medium, Verdana, Helvetica, sans-serif;
+  font-family: Source Sans Pro Light, Helvetica, Arial, sans-serif;
 }
 
 .about__container, .navbar__container {
@@ -568,6 +568,19 @@
 
 .individual-project:hover {
   transform: scale(1.03);
+}
+
+.individual-project2 {
+  display: flex;
+  justify-content: none;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  flex-wrap: nowrap;
+  background-color: #222;
+  color: white;
+  transition: all 0.2s ease-in-out;
+  border-radius: 2em;
 }
 
 #contact {
