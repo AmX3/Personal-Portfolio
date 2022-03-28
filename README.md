@@ -4,7 +4,7 @@ A single-page responsive portfolio showcasing my most recent projects, each with
 
 ## Live Site
 
-[https://amx3.github.io/Personal-Portfolio/]()
+(https://amx3.github.io/Personal-Portfolio/)
 
 ## Aim
 
