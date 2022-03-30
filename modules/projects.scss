@@ -22,15 +22,15 @@
 
     &__child-container {
         display: grid;
-        grid-template-columns: repeat(3, auto);
-        gap: 50px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
         @include mixins.phone {
             @include mixins.flex(
                 $flx-dir: column,
                 $just-cont: space-around,
                 $flex-wrap: wrap
             );
-            height: fit-content;
+            height: 100px;
         }
 
         @include mixins.tablet-portrait {
@@ -50,7 +50,7 @@
 }
 
 .individual-project {
-    @include mixins.flex($flx-dir: column);
+    @include mixins.flex($just-cont: none, $flx-dir: column);
     @include mixins.background-and-color(palette.$darker-grey, palette.$white);
     transition: all 0.2s ease-in-out;
     border-radius: 2em;
@@ -160,11 +160,4 @@
 
 .individual-project:hover {
     transform: scale(1.03);
-}
-
-.individual-project2 {
-    @include mixins.flex($just-cont: none, $flx-dir: column);
-    @include mixins.background-and-color(palette.$darker-grey, palette.$white);
-    transition: all 0.2s ease-in-out;
-    border-radius: 2em;
 }
