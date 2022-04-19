@@ -80,9 +80,17 @@
         left: 0;
         width: 100%;
         height: 100%;
-        @include mixins.flex($just-cont: space-around, $align-itm: center);
+        @include mixins.flex(
+            $just-cont: space-around,
+            $align-itm: center,
+            $flex-wrap: wrap
+        );
         opacity: 0; /*text is hidden by default*/
         transition: backdrop-filter 0.25s; /*no delay in blur effect*/
+    }
+
+    &__image-overlay-skills {
+        @include mixins.flex($flx-dir: column);
     }
 
     &__image-overlay-blur {
@@ -113,6 +121,10 @@
         @extend %font-navbar-family;
         padding: 0.5em 1em;
     }
+
+    // &__skills {
+    //     @include mixins.flex($just-cont: space-evenly);
+    // }
 
     &__content {
         padding: 25px 0;
