@@ -1,12 +1,10 @@
-const navigation = document.querySelector(".navbar"); //selects our class in the header
+const navigation = document.querySelector(".navbar");
+
 window.onscroll = function () {
-    var top = window.scrollY; //creating an variable
-    console.log(top); //executing our scroll
-    if (top > 75) {
-        navigation.classList.add("change-color");
-    } else {
-        navigation.classList.remove("change-color");
-    }
+    var top = window.scrollY;
+    return top > 75
+        ? navigation.classList.add("change-color")
+        : navigation.classList.remove("change-color");
 };
 
 function toggleMenu() {
@@ -19,8 +17,6 @@ function toggleMenu() {
 function updateCurrentYear() {
     var present = new Date();
     var year = present.getFullYear();
-
     document.getElementById("currentYear").innerHTML = year;
 }
-
 updateCurrentYear();
