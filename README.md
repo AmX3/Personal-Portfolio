@@ -30,3 +30,11 @@ The foundations of my portfolio are created using Flexbox & CSS Grid. Fontawesom
 ![image](Images/FinalDesign.jpg)
 
 ## Portfolio Screenshots
+
+**Home Page**
+
+![image](Images/HomePage.png)
+
+**Projects**
+
+![image](Images/Projects.png)
